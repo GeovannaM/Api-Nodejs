@@ -1,11 +1,9 @@
-'use strict'
+const express = require('express')
+const router = express.Router()
+const controller = require('../controllers/product-controller')
 
-const express = require('express');
-const router = express.Router();
-const controller = require('../controllers/product-controller');
+router.post('/', controller.create)
+router.put('/:id', controller.update)
+router.delete('/', controller.remove)
 
-router.post('/', controller.post);
-router.put('/:id', controller.put);
-router.delete('/', controller.delete);
-
-module.exports = router;
+module.exports = router
